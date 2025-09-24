@@ -1,0 +1,19 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"  # Arrel del repo, on tens requirements.txt si el crees
+    schedule:
+      interval: "weekly"   # Pots posar "daily" o "monthly"
+      day: "monday"        # Dependabot obrirà PRs els dilluns
+      time: "09:00"        # UTC
+    open-pull-requests-limit: 5
+    groups:
+      security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      version-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
